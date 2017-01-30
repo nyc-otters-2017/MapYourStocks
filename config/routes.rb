@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get 'stocks/all' => "stocks#all"
 
+  # devise_for :users, controllers: {registrations: "users/registrations"}
+                                    # sessions: 'users/sessions' }
   resources :users, only: [:show]
-
 end
