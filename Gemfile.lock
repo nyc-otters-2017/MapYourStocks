@@ -39,17 +39,16 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bcrypt (3.1.11)
     builder (3.2.3)
     byebug (9.0.6)
-    coffee-rails (4.2.1)
-      coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.2.x)
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.4)
+    connection_pool (2.2.1)
     debug_inspector (0.0.2)
     devise (4.2.0)
       bcrypt (~> 3.0)
@@ -59,6 +58,8 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.7.0)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
     ffi (1.9.17)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -120,6 +121,13 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    react-rails (1.10.0)
+      babel-transpiler (>= 0.7.0)
+      coffee-script-source (~> 1.8)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
     sass (3.4.23)
@@ -164,14 +172,15 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  coffee-rails (~> 4.2)
   devise
+  factory_girl
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
   pg (~> 0.18)
   puma (~> 3.0)
   rails (~> 5.0.1)
+  react-rails
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
