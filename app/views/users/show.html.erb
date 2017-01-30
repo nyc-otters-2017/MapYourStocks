@@ -6,9 +6,19 @@
   </head>
   <body>
     <h4>Current user page</h4>
-    <p>
-      <span><%=@user.name%></span>
-      <span><%=@user.email%></span>
-    </p>
+    <ul>
+      <li>name: <%=@user.name%></li>
+      <li>email: <%=@user.email%></li>
+      <li><%= link_to "edit", edit_user_registration_path %></li>
+    <ul>
+      
+    <div class="">
+      <ul>
+        user's ticker
+        <% @user.stocks.all.each do |stock| %>
+        <li><%= stock.ticker %></li>
+        <% end %>
+      </ul>
+    </div>
   </body>
 </html>
