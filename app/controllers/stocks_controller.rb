@@ -1,0 +1,3 @@
+class StocksController < ActionController
+  
+end
