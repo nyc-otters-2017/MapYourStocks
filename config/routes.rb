@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: "stocks#index"
 
   get 'stocks/all' => "stocks#all"
-
+  get "stocks/:ticker" => "stocks#show"
   # devise_for :users, controllers: {registrations: "users/registrations"}
                                     # sessions: 'users/sessions' }
   resources :users, only: [:show]
