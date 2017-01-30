@@ -1,24 +1,13 @@
-# README
+# MapYourStocks
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+***
 
-Things you may want to cover:
+### Kane Lee & Kevin Hu
 
-* Ruby version
+---
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  * As a user I want to be able to view all stocks.
+  * As a user I want to be able to add the stocks that I choose
+    to my portfolio.
+  * As a user I want to know what my total profit and losses are,
+    for individual stocks and for the entire portfolio.
