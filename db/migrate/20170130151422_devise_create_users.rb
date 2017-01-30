@@ -4,8 +4,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.string :name.               null: false, default: "user#{rand(100..500)}"
-      
+      t.string :name,               null: false, default: "user#{rand(100..500)}"
+
 
 
       ## Recoverable
