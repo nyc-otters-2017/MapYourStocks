@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   root to: "stocks#index"
 
+  get 'stocks/all' => "stocks#all"
+
 end
