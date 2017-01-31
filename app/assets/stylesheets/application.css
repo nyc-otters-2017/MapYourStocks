@@ -42,11 +42,29 @@ nav ul li {
 }
 table {
     border-collapse: collapse;
-    width: 33%;
+    width: 100%;
 }
 
 table, td, th {
 
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+tr:nth-child(even){background-color: rgb(232, 73, 51);}
+
+
+.stock {
+	width: 250px;
+	height: 180px;
+	background-color: #CCC;
+	position: relative;
+	float: left;
+	margin: 5px;
+  text-align: center;
+	transition: box-shadow 0.2s ease;
+	&:hover {
+		//box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.15);
+	}
+
+body {
+  background-color: rgb(27, 80, 172);
+}

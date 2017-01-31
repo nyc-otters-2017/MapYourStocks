@@ -10,7 +10,7 @@ class StocksList extends React.Component {
   render() {
     return(
       <section>
-        <h1>Hello App!</h1>
+        
         <ul>
 
         {
