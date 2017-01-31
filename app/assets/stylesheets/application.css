@@ -40,3 +40,13 @@ nav ul li {
 .brand-logo {
   font-size: 250%;
 }
+table {
+    border-collapse: collapse;
+    width: 33%;
+}
+
+table, td, th {
+
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
