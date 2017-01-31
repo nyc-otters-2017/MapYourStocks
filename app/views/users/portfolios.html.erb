@@ -1,0 +1,17 @@
+<h1><%= current_user.name %>'s portfolio</h1>
+<% if current_user.portfolios == [] %>
+  <% current_user.portfolios.each do |portfolio| %>
+    <table>
+      <%= react_component 'Portfolio' %>
+    </table>
+  <% end %>
+<% end %>
+<%= form_for :portfolio, url: portfolios_path do |f| %>
+  <p>
+    <%= f.label :name %>:<br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
