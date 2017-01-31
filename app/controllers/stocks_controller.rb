@@ -6,7 +6,9 @@ class StocksController < ApplicationController
 
   def show
     @ticker = params[:ticker]
-    url = 
+    ticker_info = ApplicationHelper.get_stock_info(@ticker)
+    @ticker_response =  ApplicationHelper.info_response(ticker_info)
+
   end
 
 

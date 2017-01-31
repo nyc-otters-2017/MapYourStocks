@@ -7,4 +7,10 @@ class User < ApplicationRecord
   has_many :portfolios
   has_many :stocks, through: :portfolios
 
+
+
+  def has_ticker?(ticker)
+    self.stocks.where(ticker: ticker).size > 0
+  end
+
 end
