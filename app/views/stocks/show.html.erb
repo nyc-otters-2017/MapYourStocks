@@ -18,14 +18,14 @@
       <input type='text' name='quantity' value='0' class='qty' />
       <input type='button' value='+' class='qtyplus' field='quantity' />
 
-        <select name="stock[portfolio]" >
+        <select name="stock[portfolio_id]" >
           <option value="" disabled selected>Choose your option</option>
             <% current_user.portfolios.each do |portfolio|  %>
           <option value="<%= portfolio.id%>"> <%=portfolio.name%> </option>
             <% end %>
         </select>
       <input type="hidden" name="stock[ticker]" value="<%=@ticker%>">
-      <input type="hidden" name="stock[buy]" value="<%= @ticker_response['LastTradePriceOnly'].to_f %>">
+      <input type="hidden" name="stock[buy]" value="<%= @ticker_response['LastTradePriceOnly'] %>">
       <input type="submit" name="" value="Buy">
     </form>
     <% if @errors %>
