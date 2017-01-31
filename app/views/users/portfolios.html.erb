@@ -3,7 +3,16 @@
   <% current_user.portfolios.each do |portfolio| %>
     <h3><%= portfolio.name %></h3>
     <table>
-
+      <tr>
+        <th>Current Value</th>
+        <th>Cost Basis</th>
+        <th>Total PL</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
     </table>
     <table>
       <% portfolio.stocks.each do |stock| %>
