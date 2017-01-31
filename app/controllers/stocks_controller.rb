@@ -11,11 +11,16 @@ class StocksController < ApplicationController
   end
 
   def create
+
     @stock = current_user.stocks.new(stock_params)
     if @stock.save
       redirect_to '/'
     else
-      render "stocks/#{stock_params[:ticker]}"
+      @ticker = params[:stock][:ticker]
+      ticker_info = ApplicationHelper.get_stock_info(@ticker)
+      @ticker_response = ApplicationHelper.info_response(ticker_info)
+      @errors = @stock.errors.full_messages
+      render "stocks/show"
     end
   end
 

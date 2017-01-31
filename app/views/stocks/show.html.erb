@@ -28,7 +28,14 @@
       <input type="hidden" name="stock[buy]" value="<%= @ticker_response['LastTradePriceOnly'].to_f %>">
       <input type="submit" name="" value="Buy">
     </form>
-
-
+    <% if @errors %>
+    <div class="error_message">
+      <ul>
+        <% @errors.each do |error|%>
+        <li><%=error%></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
   </div>
 <% end %>

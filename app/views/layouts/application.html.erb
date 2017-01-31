@@ -6,13 +6,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+     <!-- <link type="text/css" rel="stylesheet" href="app/assets/stylesheets/materialize.min.css"  media="screen,projection"/> -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
   <body>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="app/assets/javascripts/materialize.min.js"></script>
 
     <nav>
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo">MapYoStocks</a>
+        <a class="brand-logo">MapYoStocks</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="/">Home</a></li>
           <% if user_signed_in? %>
