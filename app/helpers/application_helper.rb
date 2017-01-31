@@ -1,4 +1,5 @@
 module ApplicationHelper
+
   def self.get_stock_info(ticker)
     url = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quote%20where%20symbol%20in%20(%22"+ ticker + "%22)&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback="
     # uri = URI(url)
@@ -10,5 +11,14 @@ module ApplicationHelper
     info['query']['results']['quote']
   end
 
+
+
+  def current_value(shares, current_price)
+    shares * current_price
+  end
+
+  def cost_basis(shares, buy_price)
+    shares * buy_price
+  end
 
 end

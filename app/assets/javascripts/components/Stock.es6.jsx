@@ -5,14 +5,16 @@ class Stock extends React.Component {
 
 
   render() {
+    let showStock='stocks/'+ this.props.symbol
     return(
       <li>
-        <p>{this.props.symbol}</p>
-        <p>{this.props.name}</p>
-        <p>{this.props.change}</p>
-        <p>{this.props.high}</p>
-        <p>{this.props.low}</p>
-
+        <h2>{this.props.symbol}</h2>
+        <span><h3>{this.props.name}</h3></span>
+        <span>{this.props.change} | </span>
+        <span>{this.props.high} | </span>
+        <span>{this.props.low} | </span>
+        <span>${this.props.current} | </span>
+        <span><a href={showStock}>add</a></span>
       </li>
     )
   }
