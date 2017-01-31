@@ -3,6 +3,7 @@ class App extends React.Component {
     super();
     this.state = {
       stocks: [],
+      intervalId: {}
     }
   }
 
@@ -21,10 +22,14 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    var refresh = setInterval(() => {
+    let refresh = setInterval(() => {
       this.callStockList()
-    }, 10000);
+    }, 15000);
+    this.setState({intervalId: refresh})
+  }
 
+  componentWillUnmount() {
+    clearInterval(this.state.intervalId)
   }
 
 
