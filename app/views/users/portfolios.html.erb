@@ -1,13 +1,36 @@
 <h1><%= current_user.name %>'s portfolio</h1>
-<% if current_user.portfolios == [] %>
+<% if current_user.portfolios != [] %>
   <% current_user.portfolios.each do |portfolio| %>
+    <h3><%= portfolio.name %></h3>
     <table>
-      <%= react_component 'Portfolio' %>
+      <tr>
+        <th>Current Value</th>
+        <th>Cost Basis</th>
+        <th>Total PL</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <table>
+      <% portfolio.stocks.each do |stock| %>
+        <tr>
+          <th>Ticker</th>
+          <th>Buy</th>
+          <th>Shares</th>
+        </tr>
+        <tr>
+          <td><%= stock.ticker %></td>
+          <td><%= stock.buy %></td>
+          <td><%= stock.shares %></td>
+        </tr>
+      <% end %>
     </table>
   <% end %>
 <% end %>
 <%= form_for :portfolio, url: portfolios_path do |f| %>
-  <%= f.hidden_field_tag :user_id, current_user.id %>
   <p>
     <%= f.label :name %>:<br>
     <%= f.text_field :name %>

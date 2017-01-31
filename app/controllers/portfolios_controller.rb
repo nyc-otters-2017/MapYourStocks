@@ -1,8 +1,12 @@
 class PortfoliosController < ApplicationController
 
   def new
-    @portfolio = Portfolio.new(params[:portfolio])
-    debugger
+    @portfolio = Portfolio.new(portfolio_params)
+    @portfolio.user_id = current_user.id
+
+    if @portfolio.save
+      redirect_to "/"
+    end
   end
 
   # def all
@@ -11,4 +15,8 @@ class PortfoliosController < ApplicationController
   #     response = Net::HTTP.get(uri)
   #     render json: JSON.parse(response)
   # end
+  private
+  def portfolio_params
+    params[:portfolio].permit(:name, :user_id)
+  end
 end

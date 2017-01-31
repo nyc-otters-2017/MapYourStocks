@@ -11,8 +11,9 @@ class StocksController < ApplicationController
   end
 
   def create
-
-    @stock = current_user.stocks.new(stock_params)
+    @portfolio = Portfolio.find(params[:stock][:portfolio_id])
+    # debugger
+    @stock = @portfolio.stocks.new(stock_params)
     if @stock.save
       redirect_to '/'
     else
@@ -34,8 +35,8 @@ class StocksController < ApplicationController
   private
   def stock_params
     shares = {"shares" => params[:quantity]}
-    params[:stock].permit(:ticker, :buy, :portfolio).merge(shares)
 
+    params[:stock].permit(:ticker, :buy, :portfolio).merge(shares)
   end
 
 
