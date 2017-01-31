@@ -7,12 +7,12 @@ class Stock extends React.Component {
   render() {
     return(
       <li>
-        <p>{this.props.symbol}</p>
-        <p>{this.props.name}</p>
-        <p>{this.props.change}</p>
-        <p>{this.props.high}</p>
-        <p>{this.props.low}</p>
-
+        <h2>{this.props.symbol}</h2>
+        <h3>{this.props.name}</h3>
+        <span>{this.props.change} | </span>
+        <span>{this.props.high} | </span>
+        <span>{this.props.low} | </span>
+        <span>${this.props.current}</span>
       </li>
     )
   }

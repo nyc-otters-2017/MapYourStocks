@@ -22,6 +22,7 @@ class StocksList extends React.Component {
                      change={element.Change}
                      high={element.DaysHigh}
                      low={element.DaysLow}
+                     current={element.LastTradePriceOnly}
               />
             )
           })
