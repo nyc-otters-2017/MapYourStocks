@@ -14,3 +14,28 @@ test_port = kane.portfolios.create!(name:'lazy testing')
 10.times do
   test_port.stocks.create!(ticker: sample_tickers.sample)
 end
+
+tickers = [
+  "YHOO",
+  "AAPL",
+  "GOOG",
+  "MSFT",
+  "FB",
+  "INTC",
+  "AMZN",
+  "CTSH",
+  "CMCSA",
+  "AAL",
+  "AVGO",
+  "TMUS",
+  "NVDA",
+  "QCOM",
+  "AMAT",
+  "CSCO",
+  "INCY",
+  "VRTX",
+  "NFLX",
+  "KHC",
+  "PYPL",
+  "TSLA"
+]

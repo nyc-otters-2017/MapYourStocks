@@ -13,6 +13,8 @@ class Stock extends React.Component {
         <span>{this.props.high} | </span>
         <span>{this.props.low} | </span>
         <span>${this.props.current}</span>
+        <span>{link_to "add", stocks}</span>
+
       </li>
     )
   }
