@@ -13,7 +13,6 @@ class Stock extends React.Component {
         <p>{this.props.high}</p>
         <p>{this.props.low}</p>
 
-        
       </li>
     )
   }

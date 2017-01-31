@@ -6,4 +6,6 @@ module StockHelper
   def cost_basis(shares, buy_price)
     shares * buy_price
   end
+
+
 end

@@ -11,10 +11,10 @@
       <li>email: <%=@user.email%></li>
       <li><%= link_to "edit", edit_user_registration_path %></li>
     <ul>
-      
+
     <div class="">
       <ul>
-        user's ticker
+        <h3>user's tickers</h3>
         <% @user.stocks.all.each do |stock| %>
         <li><%= stock.ticker %></li>
         <% end %>

@@ -1,0 +1,16 @@
+
+
+<div class="">
+  <ul>
+    <h3 id=tickerName>Ticker: <%=@ticker%></h3>
+    <% @ticker_response.each do |key, value|  %>
+      <li><%="#{key} : #{value}"%></li>
+    <% end %>
+  </ul>
+</div>
+
+<% if !current_user.has_ticker?(@ticker) %>
+  <div class="">
+    <h3>buy this stock</h3>
+  </div>
+<% end %>
