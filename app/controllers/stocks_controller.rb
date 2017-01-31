@@ -24,12 +24,12 @@ class StocksController < ApplicationController
     end
   end
 
-  def all
-    url = 'http://finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote?format=json'
-    uri = URI(url)
-    response = Net::HTTP.get(uri)
-    render json: JSON.parse(response)
-  end
+  # def all
+  #   url = 'http://finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote?format=json'
+  #   uri = URI(url)
+  #   response = Net::HTTP.get(uri)
+  #   render json: JSON.parse(response)
+  # end
 
   private
   def stock_params

@@ -11,5 +11,9 @@ Rails.application.routes.draw do
                                     # sessions: 'users/sessions' }
   resources :users, only: [:show]
 
-  get "users/:id/portfolio" => "users#portfolio"
+  get "users/:id/portfolios" => "users#portfolios"
+
+  get "users/:user_id/portfolios/:id/all" => "users#all"
+
+  post "portfolios" => "portfolios#new"
 end
