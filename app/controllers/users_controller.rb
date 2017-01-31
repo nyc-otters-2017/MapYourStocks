@@ -12,8 +12,9 @@ class UsersController < ApplicationController
   end
 
   def all
-    @userStocks = current_user.
-    url = 'http://finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote?format=json'
+    debugger
+    @userStocks = current_user.portfolios.find(:id).stocks
+    url = ''
     uri = URI(url)
     response = Net::HTTP.get(uri)
     render json: JSON.parse(response)

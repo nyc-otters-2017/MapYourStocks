@@ -7,6 +7,7 @@
   <% end %>
 <% end %>
 <%= form_for :portfolio, url: portfolios_path do |f| %>
+  <%= f.hidden_field_tag :user_id, current_user.id %>
   <p>
     <%= f.label :name %>:<br>
     <%= f.text_field :name %>

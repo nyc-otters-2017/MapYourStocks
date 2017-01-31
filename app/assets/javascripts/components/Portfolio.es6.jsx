@@ -15,10 +15,10 @@ class Portfolio extends React.Component {
   }
 
 
-  render() {
-    return(
-      <h1>Yo Stocks</h1>
-      <>
-    )
-  }
+  // render() {
+  //   return(
+  //     <h1>Yo Stocks</h1>
+  //     <>
+  //   )
+  // }
 }
