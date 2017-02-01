@@ -10,9 +10,7 @@ class StocksList extends React.Component {
   render() {
     return(
       <section>
-        
         <ul>
-
         {
           this.props.data.map((element, i) => {
             return (

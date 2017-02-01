@@ -1,43 +1,45 @@
-
+<%= react_component 'StockShow', {ticker: @ticker} %>
 
 <div class="" style="text-align:center;margin: auto;width: 50%;">
-  <ul>
-    <h3 id=tickerName style="">Ticker: <%=@ticker%></h3>
-    <% @ticker_response.each do |key, value|  %>
-      <li><%="#{key} : #{value}"%></li>
-    <% end %>
-  </ul>
+    <ul>
+        <h3 id=tickerName style="">Ticker:
+            <%=@ticker%></h3>
+        <% @ticker_response.each do |key, value|  %>
+        <li><%="#{key} : #{value}"%></li>
+        <% end %>
+    </ul>
 </div>
 
 <% if current_user %>
 <div class="" style="margin: auto; width: 50%; text-align: center;">
-  <h3>buy this stock</h3>
-  <form id='myform' method='POST' action='/stocks'>
-    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-    <input type='button' value='-' class='qtyminus' field='quantity' />
-    <input type='text' name='quantity' value='0' class='qty' />
-    <input type='button' value='+' class='qtyplus' field='quantity' />
+    <h3>buy this stock</h3>
+    <form id='myform' method='POST' action='/stocks'>
+        <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+        <input type='button' value='-' class='qtyminus' field='quantity'/>
+        <input type='text' name='quantity' value='0' class='qty'/>
+        <input type='button' value='+' class='qtyplus' field='quantity'/>
 
-
-        <select name="stock[portfolio_id]" >
-          <option value="" disabled selected>Choose your option</option>
+        <select name="stock[portfolio_id]">
+            <option value="" disabled selected>Choose your option</option>
             <% current_user.portfolios.each do |portfolio|  %>
-          <option value="<%= portfolio.id%>"> <%=portfolio.name%> </option>
+            <option value="<%= portfolio.id%>">
+                <%=portfolio.name%>
+            </option>
             <% end %>
         </select>
-      <input type="hidden" name="stock[ticker]" value="<%=@ticker%>">
-      <input type="hidden" name="stock[buy]" value="<%= @ticker_response['LastTradePriceOnly'] %>">
-      <input type="submit" name="" value="Buy">
+        <input type="hidden" name="stock[ticker]" value="<%=@ticker%>">
+        <input type="hidden" name="stock[buy]" value="<%= @ticker_response['LastTradePriceOnly'] %>">
+        <input type="submit" name="" value="Buy">
     </form>
     <% if @errors %>
     <div class="error_message">
-      <ul>
-        <% @errors.each do |error|%>
-        <li><%=error%></li>
-        <% end %>
-      </ul>
+        <ul>
+            <% @errors.each do |error|%>
+            <li><%=error%></li>
+            <% end %>
+        </ul>
     </div>
     <% end %>
 
-  </div>
-  <% end %>
+</div>
+<% end %>
