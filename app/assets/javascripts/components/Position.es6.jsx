@@ -15,12 +15,14 @@ class Position extends React.Component {
     let costBasis = (parseFloat(this.props.myData.buy)*parseFloat(this.props.myData.shares)).toFixed(2)
 
     return(
+
         <tr>
           <td>{this.props.currentData.symbol}</td>
           <td>{currentValue}</td>
           <td>{(parseFloat(this.props.myData.buy)*parseFloat(this.props.myData.shares)).toFixed(2)}</td>
           <td>{currentValue - costBasis}</td>
         </tr>
+
     )
   }
 }

@@ -37,6 +37,7 @@ class Portfolio extends React.Component {
                           myData={this.state.myStocks[i]}
                           currentData={element}
                         />
+
               )
               }
             }

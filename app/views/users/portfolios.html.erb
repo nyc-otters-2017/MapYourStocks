@@ -2,7 +2,7 @@
 <% if current_user.portfolios != [] %>
   <% current_user.portfolios.each do |portfolio| %>
     <h3><%= portfolio.name %></h3>
-    <table>
+    <table class='stock_total'>
       <%= react_component 'Portfolio', {stocks: portfolio.stocks, user: current_user }%>
       <% portfolio.stocks.each do |stock| %>
         <tr>
