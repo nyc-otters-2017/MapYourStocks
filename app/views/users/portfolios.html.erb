@@ -3,21 +3,8 @@
   <% current_user.portfolios.each do |portfolio| %>
     <h3><%= portfolio.name %></h3>
     <table>
-      <tr>
-        <th>Current Value</th>
-        <th>Cost Basis</th>
-        <th>Total PL</th>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
-    <table>
-      <%= react_component 'Portfolio', {stocks: portfolio.stocks }%>
+      <%= react_component 'Portfolio', {stocks: portfolio.stocks, user: current_user }%>
       <% portfolio.stocks.each do |stock| %>
-
         <tr>
           <th>Ticker</th>
           <th>Buy</th>
