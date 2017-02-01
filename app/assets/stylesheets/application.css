@@ -40,16 +40,23 @@ nav ul li {
 .brand-logo {
   font-size: 250%;
 }
-table {
+
+table, tbody {
     border-collapse: collapse;
     width: 100%;
 }
 
-table, td, th {
-
+tbody, table {
+    text-align: center;
+    width:100%;
+}
+td, th {
+  width: 100%;
+  padding: 20px;
 }
 
 tr:nth-child(even){background-color: rgb(232, 73, 51);}
+
 
 
 .stock {
