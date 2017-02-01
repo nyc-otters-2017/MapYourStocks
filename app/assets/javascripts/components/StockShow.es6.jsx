@@ -16,7 +16,6 @@ class StockShow extends React.Component {
       this.setState({stockInfo: response.query.results.quote});
     }.bind(this))
 
-    debugger
   }
   render() {
     return(
