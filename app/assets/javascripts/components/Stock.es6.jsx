@@ -3,7 +3,6 @@ class Stock extends React.Component {
     super()
   }
 
-
   render() {
     let showStock='stocks/'+ this.props.symbol
 
