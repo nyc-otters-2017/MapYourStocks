@@ -15,7 +15,9 @@
       </tr>
     </table>
     <table>
+      <%= react_component 'Portfolio', {stocks: portfolio.stocks }%>
       <% portfolio.stocks.each do |stock| %>
+
         <tr>
           <th>Ticker</th>
           <th>Buy</th>

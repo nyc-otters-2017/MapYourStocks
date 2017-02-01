@@ -24,7 +24,7 @@ class App extends React.Component {
   componentDidMount() {
     let refresh = setInterval(() => {
       this.callStockList()
-    }, 10000);
+    }, 15000);
     this.setState({intervalId: refresh})
   }
 

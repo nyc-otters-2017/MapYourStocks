@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get "users/:id/portfolios" => "users#portfolios"
 
-  get "users/:user_id/portfolios/:id/all" => "users#all"
+  get "portfolios/:id/all" => "portfolios#all"
 
   post "portfolios" => "portfolios#new"
 end

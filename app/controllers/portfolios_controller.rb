@@ -9,12 +9,15 @@ class PortfoliosController < ApplicationController
     end
   end
 
-  # def all
-  #     url = 'http://finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote?format=json'
-  #     uri = URI(url)
-  #     response = Net::HTTP.get(uri)
-  #     render json: JSON.parse(response)
-  # end
+  def all
+    @portfolio = Portfolio.find_by(id: params[:id])
+    @userStocks = @portfolio.stocks.map { |stock| stock.ticker }
+    url = "https://query.yahooapis.com/v1/public/yql?q=select%20* from yahoo.finance.quotes where symbol in (\"#{@userStocks.join(',')}\")&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback="
+    uri = URI(url)
+    response = Net::HTTP.get(uri)
+    render json: JSON.parse(response)
+  end
+  
   private
   def portfolio_params
     params[:portfolio].permit(:name, :user_id)
