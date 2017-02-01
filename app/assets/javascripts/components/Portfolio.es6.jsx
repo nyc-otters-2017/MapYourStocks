@@ -1,24 +1,27 @@
 class Portfolio extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      myStocks: []
     }
   }
 
   componentWillMount() {
-    // let url = this.props.portfolios.stocks.join(",")
+    // debugger
     $.ajax({
       type: 'get',
-      url: 'https://query.yahooapis.com/v1/public/yql?q=select%20* from yahoo.finance.quotes where symbol in (' + ticker + ')&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback='
-    })
+      url: '/portfolios/'+ this.props.stocks[0].portfolio_id + '/all'
+    }).success(function(response) {
+      let stockList = response.query.results.quote
+      debugger
+      console.log(response)
+    }.bind(this))
   }
 
-  // 
-  // render() {
-  //   return(
-  //     <h1>Yo Stocks</h1>
-  //     <>
-  //   )
-  // }
+
+  render() {
+    return(
+      <h1>Yo Stocks</h1>
+
+    )
+  }
 }
