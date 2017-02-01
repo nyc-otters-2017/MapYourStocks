@@ -1,14 +1,6 @@
-<%= react_component 'StockShow', {ticker: @ticker} %>
+<%= react_component 'StockShow', {ticker: @ticker, user: current_user, keyToken: form_authenticity_token} %>
 
-<div class="" style="text-align:center;margin: auto;width: 50%;">
-    <ul>
-        <h3 id=tickerName style="">Ticker:
-            <%=@ticker%></h3>
-        <% @ticker_response.each do |key, value|  %>
-        <li><%="#{key} : #{value}"%></li>
-        <% end %>
-    </ul>
-</div>
+
 
 <% if current_user %>
 <div class="" style="margin: auto; width: 50%; text-align: center;">
