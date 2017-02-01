@@ -47,12 +47,12 @@ table, tbody {
 }
 
 tbody, table {
-    text-align: center;
-    width:100%;
+    /*text-align: center;
+    width:100%;*/
 }
 td, th {
-  width: 100%;
-  padding: 20px;
+  /*width: 100%;
+  padding: 20px;*/
 }
 
 tr:nth-child(even){background-color: rgb(232, 73, 51);}
@@ -70,4 +70,8 @@ tr:nth-child(even){background-color: rgb(232, 73, 51);}
 	transition: box-shadow 0.2s ease;
 	&:hover {
 		//box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.15);
-	}
+}
+
+.show_stock_page h3 ul li {
+  text-align: center;
+}

@@ -11,17 +11,23 @@ class StocksController < ApplicationController
   end
 
   def create
-    @portfolio = Portfolio.find(params[:stock][:portfolio_id])
-    # debugger
-    @stock = @portfolio.stocks.new(stock_params)
-    if @stock.save
-      redirect_to '/'
+
+    @portfolio = Portfolio.find_by(id: params[:stock][:portfolio_id])
+    @ticker = params[:stock][:ticker]
+    if @portfolio
+      @stock = @portfolio.stocks.new(stock_params)
+
+      if @stock.save
+        redirect_to '/'
+      else
+        ticker_info = ApplicationHelper.get_stock_info(@ticker)
+        @ticker_response = ApplicationHelper.info_response(ticker_info)
+        @errors = @stock.errors.full_messages
+        render "stocks/#{@ticker}"
+      end
     else
-      @ticker = params[:stock][:ticker]
-      ticker_info = ApplicationHelper.get_stock_info(@ticker)
-      @ticker_response = ApplicationHelper.info_response(ticker_info)
-      @errors = @stock.errors.full_messages
-      render "stocks/show"
+      @errors = "Cannot find portfolio"
+      render "show"
     end
   end
 
