@@ -6,11 +6,9 @@
 
 ---
 
-  * As a user I want to be able to view all stocks.
-  * As a user I want to be able to add the stocks that I choose
-    to my portfolio.
-  * As a user I want to know what my total profit and losses are,
-    for individual stocks and for the entire portfolio. 
+   * A user is able to view all stocks in their portfolio.  
+   * A user is able to add stock to their portfolio.  
+   * A user is able to know the total profits and losses, for an individual stocks and for the entire portfolio.  
     
 To use, run `bundler` in terminal which will install all require gems. If you do not have bundler, you can get it [here](http://bundler.io/). 
 
